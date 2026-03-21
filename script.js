@@ -65,3 +65,17 @@ function selectSession(el) {
     document.querySelectorAll('.session-option').forEach(s => s.classList.remove('active'));
     el.classList.add('active');
 }
+
+function toggleNav() {
+    const links = document.querySelector('.nav-links');
+    const burger = document.getElementById('hamburger');
+    links.classList.toggle('open');
+    burger.classList.toggle('open');
+}
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('open');
+        document.getElementById('hamburger').classList.remove('open');
+    });
+});
